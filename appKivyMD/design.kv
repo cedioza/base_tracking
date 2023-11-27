@@ -1,0 +1,182 @@
+#: import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<ElementCard@MDCard>:
+    radius:'10dp'
+    spacing:'10dp'
+    padding:'10dp'
+    image:''
+    text:''
+    sub_text:''
+    orientation:'vertical'
+    ripple_behavior:True:
+    on_release:
+        app.root.trasition = RiseInTransition()
+    image:
+        root.image
+        haling:'center'
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text:'root.text'
+            haling:'center'
+        MDLabel:
+            text:'root.sub_text'
+            haling:'center'
+
+<CustomizeScreen@MDBoxLayout>:
+    orientation:'vertical'
+    text:''
+    padding:100
+    MDLabel:
+        text:'root.sub_text'
+        haling:'center'
+        pos_hint:{'center_y':0.5}
+    MDFillRoundFlatButton:
+        text:'Inicio'
+        pos_hint:{'center_y':0.5}
+        on_release:
+            app.root.current = 'screen_principal'
+            app.root.trasition = SlideTransition(direction = 'left')
+<ui>:
+    MDScreen:
+    name: 'screen_principal'
+    md_bg_color: 0,.5,.5,1
+    MDBoxLayout:
+        orientation:'vertical'
+        MDBoxLayout:
+            size_hint:1,0.2
+            orientation:'horizontal'
+            padding:'10dp'
+            MDCard:
+                radius:'10dp'
+                padding:'10dp'
+                line_color:1,0,1,1
+            MDLabel:
+                text:'APLICACIÓN TACNA VIAJES'
+                haling:'center'
+                pos_hint:{'center_y':0.5}
+            MDSwitch:
+                pos_hint:{'center_y':0.5}
+                on_active:
+                    app.change_style(*args)
+
+        MDBoxLayout:
+            cols:3
+            size_hint: 1, .8
+            padding:['10dp','10dp','10dp','10dp']
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+
+            ElementCard:
+                text:'RUTAS'
+                sub_text:'Rutas Actuales'
+                image:'images/tacna1'
+                on_release:
+                    root.current = 'screen1'
+
+MDScreen:
+    name:'screen1'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+
+MDScreen:
+    name:'screen1'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+
+
+
+
+MDScreen:
+    name:'screen1'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+
+MDScreen:
+    name:'screen2'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+MDScreen:
+    name:'screen3'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+
+MDScreen:
+    name:'screen4'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+MDScreen:
+    name:'screen5'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+MDScreen:
+    name:'screen6'
+    CustomizeScreen:
+        text:'Pantalla Uno'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
